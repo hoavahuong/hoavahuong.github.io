@@ -93,6 +93,31 @@
             transform: scale(1.05);
         }
         
+        .view-all-btn {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+        
+        .view-all-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+            background: linear-gradient(135deg, #b91c1c, #991b1b);
+        }
+        
+        .view-all-btn:active {
+            transform: translateY(0);
+        }
+        
         .opacity-0 { opacity: 0; }
         
         /* Envelope Animations */
@@ -454,12 +479,24 @@
                     </div>
                     
                      <div id="gallery">
-                        <a href="images/prewedding_images/anh1.jpg"><img src="images/prewedding_images/anh1.jpg" /></a>
-                        <a href="images/prewedding_images/anh2.jpg"><img src="images/prewedding_images/anh2.jpg" /></a>
-                        <a href="images/prewedding_images/anh3.jpg"><img src="images/prewedding_images/anh3.jpg" /></a>
-                        <a href="images/prewedding_images/anh4.jpg"><img src="images/prewedding_images/anh4.jpg" /></a>
-                        <a href="images/prewedding_images/anh5.jpg" style="display: none"><img src="images/prewedding_images/anh5.jpg" /></a>
+                        <a href="images/prewedding/image1.jpg"><img src="images/prewedding_thumb/thumb1.jpg" alt="Ảnh cưới 1" /></a>
+                        <a href="images/prewedding/image2.jpg"><img src="images/prewedding_thumb/thumb2.jpg" alt="Ảnh cưới 2" /></a>
+                        <a href="images/prewedding/image3.jpg"><img src="images/prewedding_thumb/thumb3.jpg" alt="Ảnh cưới 3" /></a>
+                        <a href="images/prewedding/image4.jpg"><img src="images/prewedding_thumb/thumb4.jpg" alt="Ảnh cưới 4" /></a>
                     </div>
+                    
+                    <!-- View All Button -->
+                    <div class="text-center mt-4">
+                        <button id="viewAllPhotos" class="view-all-btn font-cormorant">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                            </svg>
+                            Xem tất cả ảnh
+                        </button>
+                    </div>
+                    
+                    <!-- Hidden gallery for modal with all photos -->
+                    <div id="fullGallery" style="display: none;"></div>
 
                 </div>
 
@@ -957,9 +994,44 @@
     <!-- <script src="scripts/album.js"></script>
       -->
     <script>
+    // Initialize main gallery with 4 photos
     lightGallery(document.getElementById('gallery'), {
         thumbnail: true,
-        download: false
+        download: false,
+        selector: 'a'
+    });
+    
+    // Initialize full gallery modal
+    document.addEventListener('DOMContentLoaded', function() {
+        // Generate all 40 photos for the hidden gallery
+        const fullGallery = document.getElementById('fullGallery');
+        for (let i = 1; i <= 40; i++) {
+            const link = document.createElement('a');
+            link.href = `images/prewedding/image${i}.jpg`;
+            
+            const img = document.createElement('img');
+            img.src = `images/prewedding_thumb/thumb${i}.jpg`;
+            img.style.display = 'none';
+            
+            link.appendChild(img);
+            fullGallery.appendChild(link);
+        }
+        
+        // Initialize lightGallery for full gallery
+        const fullLightGallery = lightGallery(fullGallery, {
+            thumbnail: true,
+            download: false,
+            selector: 'a',
+            animateThumb: true,
+            zoomFromOrigin: false,
+            allowMediaOverlap: true,
+            toggleThumb: true
+        });
+        
+        // Handle "View All" button click
+        document.getElementById('viewAllPhotos').addEventListener('click', function() {
+            fullLightGallery.openGallery(0);
+        });
     });
     </script>
 </body>
