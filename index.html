@@ -762,7 +762,12 @@
                             // Auto-play music after envelope opens
                             try {
                                 const backgroundMusic = document.getElementById('backgroundMusic');
-                                backgroundMusic.play().catch(e => {
+                                backgroundMusic.play().then(() => {
+                                    // Update music player UI
+                                    musicPlayer.classList.add('playing');
+                                    const musicIcon = musicPlayer.querySelector('.music-icon');
+                                    musicIcon.classList.add('spinning');
+                                }).catch(e => {
                                     console.log('Auto-play prevented:', e);
                                 });
                             } catch (e) {
