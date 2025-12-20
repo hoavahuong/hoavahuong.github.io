@@ -471,63 +471,83 @@
                         <div class="w-20 h-px bg-red-300 mx-auto mt-3"></div>
                     </div>
                     
-                    <!-- Two Column Layout -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Party Locations with Maps -->
+                    <div id="parties-location" class="space-y-8">
                         <!-- Nhà Trai -->
-                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-3 border-2 border-blue-200 shadow-lg">
-                            <div class="text-center">
-
+                        <div id="groom-party-information" class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-4 border-2 border-blue-200 shadow-lg">
+                            <div class="text-center mb-4">
                                 <!-- Title -->
-                                <h4 class="font-cormorant text-lg font-bold text-blue-800 mb-3">Nhà Trai</h4>
+                                <h4 class="font-cormorant text-xl font-bold text-blue-800 mb-3">Nhà Trai</h4>
                                 
                                 <!-- Date Time -->
                                 <div class="mb-4">
-                                    <p class="font-dancing text-base font-semibold text-blue-700 mb-1">
+                                    <p class="font-dancing text-lg font-semibold text-blue-700 mb-1">
                                         <strong>Thứ Bảy, 03/01/2026</strong>
                                     </p>
-                                    <p class="font-cormorant text-sm text-blue-600">
+                                    <p class="font-cormorant text-base text-blue-600">
                                         <strong>11:00 AM</strong>
                                     </p>
                                 </div>
                                 
                                 <!-- Address -->
-                                <div class="text-left bg-white/60 rounded-lg p-4">
-                                    <p class="font-cormorant text-sm text-gray-700 leading-relaxed">
-                                        <svg class="w-4 h-4 inline mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <div class="text-left bg-white/60 rounded-lg p-4 mb-4">
+                                    <p class="font-cormorant text-base text-gray-700 leading-relaxed">
+                                        <svg class="w-5 h-5 inline mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                                         </svg>
                                         Số 7 ngõ 20 đường Thanh Niên, Xâm Dương 3, Hồng Vân, Hà Nội
                                     </p>
                                 </div>
                             </div>
+                            
+                            <!-- Groom Location Map -->
+                            <div class="map-content" id="groom-location">
+                                <iframe 
+                                    class="map-frame w-full h-64 rounded-lg"
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d937.6446451221362!2d105.88781484815449!3d20.897784116491977!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135b1efd42d00d5%3A0x6eb4c228d1458a9a!2zTmjDoCBUaOG7nSBnacOhbyBo4buNIFjDom0gRMawxqFuZw!5e1!3m2!1svi!2sus!4v1759656126782!5m2!1svi!2sus"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
                         </div>
                         
                         <!-- Nhà Gái -->
-                        <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-3 border-2 border-pink-200 shadow-lg">
-                            <div class="text-center">
-                                
+                        <div id="bride-party-information" class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-4 border-2 border-pink-200 shadow-lg">
+                            <div class="text-center mb-4">
                                 <!-- Title -->
-                                <h4 class="font-cormorant text-lg font-bold text-pink-800 mb-3">Nhà Gái</h4>
+                                <h4 class="font-cormorant text-xl font-bold text-pink-800 mb-3">Nhà Gái</h4>
                                 
                                 <!-- Date Time -->
                                 <div class="mb-4">
-                                    <p class="font-dancing text-base font-semibold text-pink-700 mb-1">
+                                    <p class="font-dancing text-lg font-semibold text-pink-700 mb-1">
                                         <strong>Chủ Nhật, 04/01/2026</strong>
                                     </p>
-                                    <p class="font-cormorant text-sm text-pink-600">
+                                    <p class="font-cormorant text-base text-pink-600">
                                         <strong>10:00 AM</strong>
                                     </p>
                                 </div>
                                 
                                 <!-- Address -->
-                                <div class="text-left bg-white/60 rounded-lg p-4">
-                                    <p class="font-cormorant text-sm text-gray-700 leading-relaxed">
-                                        <svg class="w-4 h-4 inline mr-2 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+                                <div class="text-left bg-white/60 rounded-lg p-4 mb-4">
+                                    <p class="font-cormorant text-base text-gray-700 leading-relaxed">
+                                        <svg class="w-5 h-5 inline mr-2 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                                         </svg>
                                         Số 23 xóm Chùa, Duyên Trường, Hồng Vân, Hà Nội
                                     </p>
                                 </div>
+                            </div>
+                            
+                            <!-- Bride Location Map -->
+                            <div class="map-content" id="bride-location">
+                                <iframe 
+                                    class="map-frame w-full h-64 rounded-lg" 
+                                    src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d788.4550996974191!2d105.86558327065403!3d20.899101314660854!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDUzJzU2LjkiTiAxMDXCsDUxJzU2LjQiRQ!5e1!3m2!1svi!2sus!4v1766199993470!5m2!1svi!2sus" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
                             </div>
                         </div>
                     </div>
@@ -696,31 +716,6 @@
 
 
 
-                <!-- Wedding Location Map -->
-                <div class="map-container opacity-0 animate-fadeInUp delay-1000">
-                    <!-- Map Header -->
-                    <div class="map-header">
-                        <h3 class="font-cormorant text-xl font-bold mb-1">Tiệc mừng cưới</h3>
-                        <p class="font-dancing text-sm opacity-90">Nơi chúng ta gặp nhau 📍</p>
-                    </div>
-                    
-                    <!-- Google Maps -->
-                    <div class="map-content">
-                        <div id="map-loading" class="map-loading">
-                            <div class="loading-spinner"></div>
-                            <span class="ml-3">Đang tải bản đồ...</span>
-                        </div>
-                        <iframe 
-                            id="google-map"
-                            class="map-frame"
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d937.6446451221362!2d105.88781484815449!3d20.897784116491977!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135b1efd42d00d5%3A0x6eb4c228d1458a9a!2zTmjDoCBUaOG7nSBnacOhbyBo4buNIFjDom0gRMawxqFuZw!5e1!3m2!1svi!2sus!4v1759656126782!5m2!1svi!2sus"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            style="display: none;">
-                        </iframe>
-                    </div>
-                </div>
             </div>
 
             <!-- Footer -->
